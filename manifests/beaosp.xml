@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Build repositories -->
+  <remove-project name="platform/build" />
+  <project path="build/make" name="build_make" remote="beaosp" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <!-- External -->
+  <remove-project name="platform/external/selinux" />
+  <project path="external/selinux" name="external_selinux" remote="beaosp" />
+
+  <!-- Native -->
+  <remove-project name="platform/art" />
+  <project path="art" name="art" remote="beaosp" />
+  <remove-project name="platform/bionic" />
+  <project path="bionic" name="bionic" remote="beaosp" />
+
+  <!-- Frameworks -->
+  <remove-project name="platform/frameworks/av" />
+  <project path="frameworks/av" name="frameworks_av" remote="beaosp" />
+  <remove-project name="platform/frameworks/base" />
+  <project path="frameworks/base" name="frameworks_base" remote="beaosp" />
+  <remove-project name="platform/frameworks/native" />
+  <project path="frameworks/native" name="frameworks_native" remote="beaosp" />
+  <remove-project name="platform/frameworks/support" />
+  <project path="frameworks/support" name="frameworks_support" remote="beaosp" />
+
+  <!-- Packages -->
+  <remove-project name="platform/packages/apps/DeskClock" />
+  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="beaosp" />
+  <remove-project name="platform/packages/apps/Settings" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="beaosp" />
+
+  <!-- System -->
+  <remove-project name="platform/system/core" />
+  <project path="system/core" name="system_core" remote="beaosp" />
+  <remove-project name="platform/system/sepolicy" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="beaosp" />
+
+  <!-- Vendor -->
+  <project path="vendor/beaosp" name="vendor_beaosp" remote="beaosp" />
+  <project path="vendor/gapps" name="vendor_gapps" remote="beaosp" />
+  <project path="vendor/vndk" name="vendor_vndk" remote="beaosp" />
+
+  <!-- Obsolete Packages -->
+  <remove-project name="platform/hardware/qcom/camera"/>
+  <remove-project name="platform/hardware/qcom/data/ipacfg-mgr"/>
+  <remove-project name="platform/hardware/qcom/gps"/>
+  <remove-project name="platform/hardware/qcom/msm8998"/>
+  <remove-project name="platform/packages/apps/Browser2"/>
+  <remove-project name="platform/packages/apps/Gallery"/>
+  <remove-project name="platform/packages/apps/Launcher2"/>
+</manifest>
